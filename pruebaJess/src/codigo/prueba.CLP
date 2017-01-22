@@ -1,0 +1,1 @@
+(defrule hola => (printout t "Hola chicas :DDDD" crlf))
