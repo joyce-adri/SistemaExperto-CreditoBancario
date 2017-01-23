@@ -17,6 +17,7 @@ import jess.JessException;
 public class AplicationForm extends javax.swing.JFrame {
 
     private MotorController motorController;
+    String edad;
     
     public AplicationForm() {
         initComponents();
@@ -39,9 +40,9 @@ public class AplicationForm extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        txt_edad = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        txt_ingreso = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jTextField6 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
@@ -84,9 +85,9 @@ public class AplicationForm extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setText("Age:");
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        txt_edad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                txt_edadActionPerformed(evt);
             }
         });
 
@@ -266,9 +267,9 @@ public class AplicationForm extends javax.swing.JFrame {
                                     .addComponent(jLabel10))
                                 .addGap(15, 15, 15)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txt_edad, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txt_ingreso, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(48, 48, 48)
                                 .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -346,11 +347,11 @@ public class AplicationForm extends javax.swing.JFrame {
                         .addComponent(jLabel10))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txt_edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
                         .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txt_ingreso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jRadioButton5)
                     .addGroup(layout.createSequentialGroup()
@@ -403,9 +404,9 @@ public class AplicationForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void txt_edadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_edadActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_txt_edadActionPerformed
 
     private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
         // TODO add your handling code here:
@@ -456,16 +457,33 @@ public class AplicationForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField9ActionPerformed
 
     private void btn_enviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_enviarActionPerformed
-        try{
-            System.out.println("di click en boton enviar");
-            this.motorController.afirmar("(respuesta si)");
-            System.out.println("di click en boton enviar");
-            //this.pack();
+        
+        edad = txt_edad.getText();
+//        System.out.println(edad);
+        
+        try {
+            this.validarEdad(edad);
         } catch (JessException ex) {
-               System.out.println("Ocurrio un error");
-            }
-    }//GEN-LAST:event_btn_enviarActionPerformed
+            Logger.getLogger(AplicationForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
+    }//GEN-LAST:event_btn_enviarActionPerformed
+     
+    public void validarEdad(String edad) throws JessException{
+        int edadobj = Integer.parseInt(edad);
+        
+        if (edadobj < 18 ||  edadobj >=65)
+        {
+            System.out.println("es menor");
+            this.motorController.afirmar("(respuesta si)");
+        }
+        else{
+            System.out.println("es mayor");
+            this.motorController.afirmar("(respuesta no)");
+        }
+            
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -505,7 +523,26 @@ public class AplicationForm extends javax.swing.JFrame {
         this.motorController = motorController;
     }
     
-    public void cambiarPregunta(String pregunta){
+    
+    
+    public void getPreguntas(String pregunta) throws JessException{
+    
+     if(pregunta.equals("¿Vericado ingresos?")){
+            String ingreso = txt_ingreso.getText();
+            if(ingreso.equals("")){
+                this.motorController.afirmar("(respuesta no)");
+            }
+            else{
+                this.motorController.afirmar("(respuesta si)");
+            }
+     }
+    }
+    
+    public void cambiarPregunta(String pregunta) throws JessException{
+        
+        System.out.println("entre a cambiar pregunta");
+        System.out.println(pregunta);
+        this.getPreguntas(pregunta);
 //        jlPregunta.setText(pregunta);
 //        jrbNo.setVisible(true);
 //        jrbSi.setVisible(true);
@@ -513,6 +550,7 @@ public class AplicationForm extends javax.swing.JFrame {
     }
     
     public void darRespuesta(String respuesta){
+         System.out.println("entre a respuesta");
 //        jlPregunta.setText(respuesta);
 //        jrbNo.setVisible(false);
 //        jrbSi.setVisible(false);
@@ -552,10 +590,10 @@ public class AplicationForm extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextField txt_edad;
+    private javax.swing.JTextField txt_ingreso;
     // End of variables declaration//GEN-END:variables
 }

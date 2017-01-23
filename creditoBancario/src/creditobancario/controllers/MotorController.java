@@ -19,7 +19,6 @@ public class MotorController{
         try {
             motor = new Rete();
             motor.reset();
-            System.out.println("estoy en el controler");
             motor.batch("creditobancario/clips/credit-consola.clp");
             //motor.run();
         } catch (JessException ex) {
@@ -28,7 +27,6 @@ public class MotorController{
     }
     
     public void afirmar(String hecho) throws JessException{
-        System.out.println("entre a afirmar///");
         motor.assertString(hecho);
         System.out.println("entre a afirmar");
         motor.run();

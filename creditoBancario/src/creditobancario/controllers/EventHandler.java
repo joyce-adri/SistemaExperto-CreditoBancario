@@ -34,14 +34,14 @@ public class EventHandler implements JessListener{
                     nodo = helper.findFactByTemplateName("MAIN::Nodo", "nombre", slotV);
                     if (nodo != null){
                         String tipo = nodo.getSlotValue("tipo").stringValue(context);
-                        System.out.println(tipo);
+//                        System.out.println(tipo);
                         if (tipo.equals("pregunta")){
                             String pregunta = nodo.getSlotValue("pregunta").stringValue(context);
-                            System.out.println(pregunta);
+//                            System.out.println(pregunta);
                             vista.cambiarPregunta(pregunta);
                         }else if(tipo.equals("respuesta")){
                             String respuesta = nodo.getSlotValue("respuesta").stringValue(context);
-                            System.out.println(respuesta);
+//                            System.out.println(respuesta);
                             vista.darRespuesta("El animal es: "+respuesta);
                         }
                     }
