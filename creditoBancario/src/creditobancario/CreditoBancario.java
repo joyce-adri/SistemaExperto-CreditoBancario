@@ -15,7 +15,15 @@ public class CreditoBancario {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+//        ZooView zooView = new ZooView();
+//        MotorController motorController = new MotorController();        
+//        EventHandler eventController = new EventHandler(zooView);
+//        
+//        zooView.setMotorController(motorController);
+//        
+//        motorController.addEscuchador(eventController);
+//        
+//        motorController.ejecutar();
     }
     
 }

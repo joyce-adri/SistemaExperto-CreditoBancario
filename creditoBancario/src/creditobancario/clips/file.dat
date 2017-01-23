@@ -1,0 +1,3 @@
+(Nodo (nombre nodo-0) (tipo pregunta) (pregunta "¿El animal es de sangre fria si/no?") (respuesta nil) (nodo-si nodo-1) (nodo-no nodo-2))
+(Nodo (nombre nodo-1) (tipo respuesta) (pregunta nil) (respuesta "cocodrilo") (nodo-si nil) (nodo-no nil))
+(Nodo (nombre nodo-2) (tipo respuesta) (pregunta nil) (respuesta "vaca") (nodo-si nil) (nodo-no nil))
