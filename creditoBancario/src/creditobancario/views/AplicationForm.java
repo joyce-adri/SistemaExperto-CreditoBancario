@@ -8,6 +8,7 @@ package creditobancario.views;
 import creditobancario.controllers.MotorController;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
 import jess.JessException;
 
 /**
@@ -18,10 +19,13 @@ public class AplicationForm extends javax.swing.JFrame {
 
     private MotorController motorController;
     String edad;
+    JFrame preform;
     
     public AplicationForm() {
         initComponents();
         this.setVisible(true);
+        
+//        PreForm.jTextField2.setText("valor2");
     }
 
     /**
@@ -42,7 +46,6 @@ public class AplicationForm extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         txt_edad = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        txt_ingreso = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jTextField6 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
@@ -55,7 +58,6 @@ public class AplicationForm extends javax.swing.JFrame {
         jRadioButton6 = new javax.swing.JRadioButton();
         jRadioButton7 = new javax.swing.JRadioButton();
         jRadioButton8 = new javax.swing.JRadioButton();
-        jLabel10 = new javax.swing.JLabel();
         jCheckBox1 = new javax.swing.JCheckBox();
         jCheckBox2 = new javax.swing.JCheckBox();
         jCheckBox3 = new javax.swing.JCheckBox();
@@ -147,9 +149,6 @@ public class AplicationForm extends javax.swing.JFrame {
 
         jRadioButton8.setText("Widow");
         jRadioButton8.setToolTipText("");
-
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel10.setText("Revenue:");
 
         jCheckBox1.setText("Owns a mortgage");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -263,13 +262,11 @@ public class AplicationForm extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(30, 30, 30)
                                         .addComponent(jLabel6))
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel10))
-                                .addGap(15, 15, 15)
+                                    .addComponent(jLabel8))
+                                .addGap(16, 16, 16)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txt_edad, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txt_ingreso, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(48, 48, 48)
                                 .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -342,16 +339,12 @@ public class AplicationForm extends javax.swing.JFrame {
                         .addGap(10, 10, 10)
                         .addComponent(jLabel6)
                         .addGap(13, 13, 13)
-                        .addComponent(jLabel8)
-                        .addGap(13, 13, 13)
-                        .addComponent(jLabel10))
+                        .addComponent(jLabel8))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(txt_edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(txt_ingreso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jRadioButton5)
                     .addGroup(layout.createSequentialGroup()
@@ -363,7 +356,7 @@ public class AplicationForm extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addComponent(jRadioButton7)))
-                .addGap(20, 20, 20)
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
                     .addComponent(jCheckBox2)
@@ -528,13 +521,13 @@ public class AplicationForm extends javax.swing.JFrame {
     public void getPreguntas(String pregunta) throws JessException{
     
      if(pregunta.equals("¿Vericado ingresos?")){
-            String ingreso = txt_ingreso.getText();
-            if(ingreso.equals("")){
+            //String ingreso = txt_ingreso.getText();
+           // if(ingreso.equals("")){
                 this.motorController.afirmar("(respuesta no)");
-            }
-            else{
-                this.motorController.afirmar("(respuesta si)");
-            }
+            //}
+            //else{
+              //  this.motorController.afirmar("(respuesta si)");
+            //}
      }
     }
     
@@ -567,7 +560,6 @@ public class AplicationForm extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBox6;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JComboBox jComboBox2;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -594,6 +586,5 @@ public class AplicationForm extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     private javax.swing.JTextField txt_edad;
-    private javax.swing.JTextField txt_ingreso;
     // End of variables declaration//GEN-END:variables
 }

@@ -112,7 +112,7 @@ public class CreditApplication extends javax.swing.JFrame {
     private void btn_seguirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_seguirActionPerformed
     
 //           System.out.print("Seleccionó seguir");
-            new AplicationForm().setVisible(true);
+//            new AplicationForm().setVisible(true);
        
 
     }//GEN-LAST:event_btn_seguirActionPerformed
