@@ -1,0 +1,41 @@
+// This is the ing set for the hepatitis data.
+// The goal is to predict whether a patient survived or died from
+// hepatitis based on demographic information and the results of
+// various medical s.
+
+// The number of features in the dataset
+9
+
+// A listing of the features and their possible values.
+// All features are binary.
+credito - T F
+tipo_Cred - C V
+monto - A B
+plazo - A B
+pago - T F
+tarjeta - T F
+frecuencia - A B
+edad - A J
+Ecivil - S C
+
+// There are two possible output labels.
+aprovado
+denegado
+
+// The number of examples in this file.
+14
+
+test_1 denegado   T V B A T F B A C
+test_2 denegado   F C A A T T B A S
+test_3 aprovado   T V B B T T A J S
+test_4 aprovado   T C A A T T B A C
+test_5 aprovado   T V B B T T A J S
+test_6 aprovado   F V B A T T A A C
+test_7 aprovado   T C A B T F B J S
+test_8 aprovado   T C B A T T A A S
+test_9 denegado   T V A B F F B J S
+test_10 aprovado  F C A A T T B A C
+test_11 aprovado  T V A B F F A A C
+test_12 denegado  F C A A T T A J S
+test_13 aprovado  T V B B T F A A C
+test_14 aprovado  T C A A T T A J S

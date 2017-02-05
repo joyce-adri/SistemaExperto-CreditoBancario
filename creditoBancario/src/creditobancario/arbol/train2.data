@@ -1,0 +1,51 @@
+// This is the training set for the hepatitis data.
+// The goal is to predict whether a _ aprovado or died from
+// hepatitis based on demographic information and the results of
+// various medical tests.
+
+// The number of features in the dataset
+9
+
+// A listing of the features and their possible values.
+// All features are binary.
+credito - T F
+tipo_Cred - C V
+monto - A B //bajo y medio
+plazo - A B
+pago - T F
+tarjeta - T F
+frecuencia - A B
+edad - A J
+Ecivil - S C
+
+// There are two possible output labels.
+aprovado
+denegado
+
+// The number of examples in this file.
+24
+
+train_1 denegado   T C B B T F B J C
+train_2 denegado   T C A A T T B A C
+train_3 aprovado   T V B B T T B A C
+train_4 aprovado   T V B B T T B A C
+train_5 aprovado   T V B B T T A A C
+train_6 aprovado   T C B B T F B A C
+train_7 aprovado   T V B B T F B J S
+train_8 aprovado   T C B B T F B J S
+train_9 denegado   T C B B F F B J S
+train_10 aprovado  T C B B T T B J C
+train_11 aprovado  T C B B F T A A C
+train_12 denegado  T C A A T T B A C
+train_13 aprovado  T C A B T F B A C
+train_14 aprovado  T V B B T T A A C
+train_15 aprovado  T V A B F F B J S
+train_16 aprovado  T C A B T F B A C
+train_17 aprovado  T C A B T T B A S
+train_18 denegado  T V B B F F B A C
+train_19 denegado  T C A B F F B A C
+train_20 aprovado  T V A B F F B A S
+train_21 aprovado  T V A B T T A A C
+train_22 aprovado  T C A B T T A J S
+train_23 aprovado  T V B B T T A A S
+train_24 aprovado  F C A A T T B J C

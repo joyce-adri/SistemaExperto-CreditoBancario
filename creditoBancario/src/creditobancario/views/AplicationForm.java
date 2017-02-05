@@ -51,7 +51,6 @@ public class AplicationForm extends javax.swing.JFrame {
         txt_edad = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         txt_direccion = new javax.swing.JTextField();
-        txt_pagoLuz = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         btn_femenino = new javax.swing.JRadioButton();
@@ -59,30 +58,19 @@ public class AplicationForm extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         btn_soltero = new javax.swing.JRadioButton();
         btn_casado = new javax.swing.JRadioButton();
-        btn_divorciado = new javax.swing.JRadioButton();
-        btn_viudo = new javax.swing.JRadioButton();
-        op_seguro = new javax.swing.JCheckBox();
-        op_vehiculo = new javax.swing.JCheckBox();
-        op_casa = new javax.swing.JCheckBox();
-        op_departamento = new javax.swing.JCheckBox();
-        op_ctaCorriente = new javax.swing.JCheckBox();
-        op_ctaAhorro = new javax.swing.JCheckBox();
         jLabel16 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
         btn_enviar = new javax.swing.JButton();
-        jLabel10 = new javax.swing.JLabel();
-        txt_pagoAgua = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
-        txt_pagoTelf = new javax.swing.JTextField();
-        op_hipoteca = new javax.swing.JCheckBox();
-        op_credDirecto = new javax.swing.JCheckBox();
-        op_tarjetasCred = new javax.swing.JCheckBox();
-        jLabel20 = new javax.swing.JLabel();
-        txt_credHipoteca = new javax.swing.JTextField();
-        txt_pagoTarjetas = new javax.swing.JTextField();
-        txt_creditoCasaComercial = new javax.swing.JTextField();
+        poseeTarjetaCredito = new javax.swing.JCheckBox();
+        montoAlto = new javax.swing.JCheckBox();
+        montoBajo = new javax.swing.JCheckBox();
         btn_check = new javax.swing.JButton();
+        plazoBajo = new javax.swing.JCheckBox();
+        frecuenciaUsoTC = new javax.swing.JCheckBox();
+        tuvoCreditos = new javax.swing.JCheckBox();
+        pagaATiempo = new javax.swing.JCheckBox();
+        jLabel7 = new javax.swing.JLabel();
+        plazoAlto = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(743, 743));
@@ -99,9 +87,9 @@ public class AplicationForm extends javax.swing.JFrame {
         jLabel3.setBounds(60, 110, 70, 17);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel4.setText("Name:");
+        jLabel4.setText("If the answer is NO leave the square in blank");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(80, 140, 40, 17);
+        jLabel4.setBounds(50, 300, 290, 17);
         getContentPane().add(txt_nombre);
         txt_nombre.setBounds(140, 140, 227, 20);
 
@@ -139,14 +127,6 @@ public class AplicationForm extends javax.swing.JFrame {
         });
         getContentPane().add(txt_direccion);
         txt_direccion.setBounds(140, 230, 222, 20);
-
-        txt_pagoLuz.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_pagoLuzActionPerformed(evt);
-            }
-        });
-        getContentPane().add(txt_pagoLuz);
-        txt_pagoLuz.setBounds(140, 360, 100, 20);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel9.setText("Credit Application Form");
@@ -189,89 +169,10 @@ public class AplicationForm extends javax.swing.JFrame {
         getContentPane().add(btn_casado);
         btn_casado.setBounds(560, 173, 93, 20);
 
-        btn_divorciado.setText("Divorced");
-        btn_divorciado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_divorciadoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btn_divorciado);
-        btn_divorciado.setBounds(560, 193, 80, 20);
-
-        btn_viudo.setText("Widow");
-        btn_viudo.setToolTipText("");
-        getContentPane().add(btn_viudo);
-        btn_viudo.setBounds(560, 213, 93, 20);
-
-        op_seguro.setText("Owns a life insurance");
-        op_seguro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                op_seguroActionPerformed(evt);
-            }
-        });
-        getContentPane().add(op_seguro);
-        op_seguro.setBounds(230, 300, 150, 23);
-
-        op_vehiculo.setText("Vehicle");
-        op_vehiculo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                op_vehiculoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(op_vehiculo);
-        op_vehiculo.setBounds(140, 260, 80, 23);
-
-        op_casa.setText("House");
-        op_casa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                op_casaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(op_casa);
-        op_casa.setBounds(140, 280, 80, 23);
-
-        op_departamento.setText("Department");
-        op_departamento.setToolTipText("");
-        op_departamento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                op_departamentoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(op_departamento);
-        op_departamento.setBounds(140, 300, 90, 23);
-
-        op_ctaCorriente.setText("Active checking account");
-        op_ctaCorriente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                op_ctaCorrienteActionPerformed(evt);
-            }
-        });
-        getContentPane().add(op_ctaCorriente);
-        op_ctaCorriente.setBounds(230, 260, 160, 23);
-
-        op_ctaAhorro.setText("Active savings account");
-        op_ctaAhorro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                op_ctaAhorroActionPerformed(evt);
-            }
-        });
-        getContentPane().add(op_ctaAhorro);
-        op_ctaAhorro.setBounds(230, 280, 160, 23);
-
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel16.setText("Payment amounts per month");
+        jLabel16.setText(" Credit references");
         getContentPane().add(jLabel16);
-        jLabel16.setBounds(40, 330, 210, 17);
-
-        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel12.setText("Electric light:");
-        getContentPane().add(jLabel12);
-        jLabel12.setBounds(30, 360, 90, 17);
-
-        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel13.setText("Water:");
-        getContentPane().add(jLabel13);
-        jLabel13.setBounds(70, 390, 50, 17);
+        jLabel16.setBounds(40, 270, 210, 17);
 
         btn_enviar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btn_enviar.setText("Send");
@@ -284,90 +185,35 @@ public class AplicationForm extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btn_enviar);
-        btn_enviar.setBounds(310, 590, 90, 27);
-
-        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel10.setText("Assets:");
-        getContentPane().add(jLabel10);
-        jLabel10.setBounds(70, 260, 43, 17);
-
-        txt_pagoAgua.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_pagoAguaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(txt_pagoAgua);
-        txt_pagoAgua.setBounds(140, 390, 100, 20);
+        btn_enviar.setBounds(530, 440, 90, 27);
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel19.setText("Debts acquired:");
         getContentPane().add(jLabel19);
-        jLabel19.setBounds(20, 460, 110, 17);
+        jLabel19.setBounds(30, 310, 110, 0);
 
-        txt_pagoTelf.addActionListener(new java.awt.event.ActionListener() {
+        poseeTarjetaCredito.setText("Has credit cards?");
+        getContentPane().add(poseeTarjetaCredito);
+        poseeTarjetaCredito.setBounds(100, 500, 200, 23);
+
+        montoAlto.setText("amount equals or greater than 31 000");
+        montoAlto.setToolTipText("");
+        montoAlto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_pagoTelfActionPerformed(evt);
+                montoAltoActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_pagoTelf);
-        txt_pagoTelf.setBounds(140, 420, 100, 20);
+        getContentPane().add(montoAlto);
+        montoAlto.setBounds(130, 380, 230, 23);
 
-        op_hipoteca.setText("Mortage credit");
-        op_hipoteca.addActionListener(new java.awt.event.ActionListener() {
+        montoBajo.setText("amount equals or less than 30 000");
+        montoBajo.setToolTipText("");
+        montoBajo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                op_hipotecaActionPerformed(evt);
+                montoBajoActionPerformed(evt);
             }
         });
-        getContentPane().add(op_hipoteca);
-        op_hipoteca.setBounds(140, 460, 100, 23);
-
-        op_credDirecto.setText("Comercial direct credit");
-        op_credDirecto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                op_credDirectoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(op_credDirecto);
-        op_credDirecto.setBounds(140, 490, 140, 23);
-
-        op_tarjetasCred.setText("Credit cards");
-        op_tarjetasCred.setToolTipText("");
-        op_tarjetasCred.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                op_tarjetasCredActionPerformed(evt);
-            }
-        });
-        getContentPane().add(op_tarjetasCred);
-        op_tarjetasCred.setBounds(140, 520, 90, 23);
-
-        jLabel20.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel20.setText("Phone:");
-        getContentPane().add(jLabel20);
-        jLabel20.setBounds(70, 420, 60, 17);
-
-        txt_credHipoteca.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_credHipotecaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(txt_credHipoteca);
-        txt_credHipoteca.setBounds(290, 460, 120, 20);
-
-        txt_pagoTarjetas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_pagoTarjetasActionPerformed(evt);
-            }
-        });
-        getContentPane().add(txt_pagoTarjetas);
-        txt_pagoTarjetas.setBounds(290, 520, 120, 20);
-
-        txt_creditoCasaComercial.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_creditoCasaComercialActionPerformed(evt);
-            }
-        });
-        getContentPane().add(txt_creditoCasaComercial);
-        txt_creditoCasaComercial.setBounds(290, 490, 120, 20);
+        getContentPane().add(montoBajo);
+        montoBajo.setBounds(130, 360, 210, 23);
 
         btn_check.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btn_check.setText("Check");
@@ -379,7 +225,50 @@ public class AplicationForm extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btn_check);
-        btn_check.setBounds(190, 590, 90, 31);
+        btn_check.setBounds(530, 480, 90, 31);
+
+        plazoBajo.setText("credit term equals or less than 10 years");
+        plazoBajo.setToolTipText("");
+        plazoBajo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                plazoBajoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(plazoBajo);
+        plazoBajo.setBounds(130, 410, 230, 23);
+
+        frecuenciaUsoTC.setText("Uses them often?");
+        frecuenciaUsoTC.setToolTipText("");
+        frecuenciaUsoTC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                frecuenciaUsoTCActionPerformed(evt);
+            }
+        });
+        getContentPane().add(frecuenciaUsoTC);
+        frecuenciaUsoTC.setBounds(140, 530, 170, 23);
+
+        tuvoCreditos.setText("had a previous bank loan?");
+        getContentPane().add(tuvoCreditos);
+        tuvoCreditos.setBounds(100, 330, 170, 23);
+
+        pagaATiempo.setText("Make payments before deadline");
+        getContentPane().add(pagaATiempo);
+        pagaATiempo.setBounds(100, 470, 200, 23);
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel7.setText("Name:");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(80, 140, 40, 17);
+
+        plazoAlto.setText("credit term equals or greater than 11 years");
+        plazoAlto.setToolTipText("");
+        plazoAlto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                plazoAltoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(plazoAlto);
+        plazoAlto.setBounds(130, 430, 270, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -392,10 +281,6 @@ public class AplicationForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_direccionActionPerformed
 
-    private void txt_pagoLuzActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_pagoLuzActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_pagoLuzActionPerformed
-
     private void btn_femeninoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_femeninoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_femeninoActionPerformed
@@ -403,34 +288,6 @@ public class AplicationForm extends javax.swing.JFrame {
     private void btn_solteroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_solteroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_solteroActionPerformed
-
-    private void btn_divorciadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_divorciadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_divorciadoActionPerformed
-
-    private void op_seguroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_op_seguroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_op_seguroActionPerformed
-
-    private void op_vehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_op_vehiculoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_op_vehiculoActionPerformed
-
-    private void op_casaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_op_casaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_op_casaActionPerformed
-
-    private void op_departamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_op_departamentoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_op_departamentoActionPerformed
-
-    private void op_ctaCorrienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_op_ctaCorrienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_op_ctaCorrienteActionPerformed
-
-    private void op_ctaAhorroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_op_ctaAhorroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_op_ctaAhorroActionPerformed
 
     private void btn_enviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_enviarActionPerformed
         edad = txt_edad.getText();
@@ -444,37 +301,13 @@ public class AplicationForm extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btn_enviarActionPerformed
 
-    private void txt_pagoAguaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_pagoAguaActionPerformed
+    private void montoAltoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_montoAltoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_pagoAguaActionPerformed
+    }//GEN-LAST:event_montoAltoActionPerformed
 
-    private void txt_pagoTelfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_pagoTelfActionPerformed
+    private void montoBajoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_montoBajoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txt_pagoTelfActionPerformed
-
-    private void op_hipotecaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_op_hipotecaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_op_hipotecaActionPerformed
-
-    private void op_credDirectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_op_credDirectoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_op_credDirectoActionPerformed
-
-    private void op_tarjetasCredActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_op_tarjetasCredActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_op_tarjetasCredActionPerformed
-
-    private void txt_credHipotecaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_credHipotecaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_credHipotecaActionPerformed
-
-    private void txt_pagoTarjetasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_pagoTarjetasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_pagoTarjetasActionPerformed
-
-    private void txt_creditoCasaComercialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_creditoCasaComercialActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_creditoCasaComercialActionPerformed
+    }//GEN-LAST:event_montoBajoActionPerformed
 
     private void btn_checkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_checkActionPerformed
         try {
@@ -483,6 +316,18 @@ public class AplicationForm extends javax.swing.JFrame {
             return;
         }
     }//GEN-LAST:event_btn_checkActionPerformed
+
+    private void plazoBajoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plazoBajoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_plazoBajoActionPerformed
+
+    private void frecuenciaUsoTCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frecuenciaUsoTCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_frecuenciaUsoTCActionPerformed
+
+    private void plazoAltoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plazoAltoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_plazoAltoActionPerformed
      
     public void validarEdad(String edad) throws JessException{
         int edadobj = Integer.parseInt(edad);
@@ -575,45 +420,33 @@ public class AplicationForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton btn_casado;
     private javax.swing.JButton btn_check;
-    private javax.swing.JRadioButton btn_divorciado;
     private javax.swing.JButton btn_enviar;
     private javax.swing.JRadioButton btn_femenino;
     private javax.swing.JRadioButton btn_masculino;
     private javax.swing.JRadioButton btn_soltero;
-    private javax.swing.JRadioButton btn_viudo;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
+    private javax.swing.JCheckBox frecuenciaUsoTC;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JCheckBox op_casa;
-    private javax.swing.JCheckBox op_credDirecto;
-    private javax.swing.JCheckBox op_ctaAhorro;
-    private javax.swing.JCheckBox op_ctaCorriente;
-    private javax.swing.JCheckBox op_departamento;
-    private javax.swing.JCheckBox op_hipoteca;
-    private javax.swing.JCheckBox op_seguro;
-    private javax.swing.JCheckBox op_tarjetasCred;
-    private javax.swing.JCheckBox op_vehiculo;
+    private javax.swing.JCheckBox montoAlto;
+    private javax.swing.JCheckBox montoBajo;
+    private javax.swing.JCheckBox pagaATiempo;
+    private javax.swing.JCheckBox plazoAlto;
+    private javax.swing.JCheckBox plazoBajo;
+    private javax.swing.JCheckBox poseeTarjetaCredito;
+    private javax.swing.JCheckBox tuvoCreditos;
     private javax.swing.JTextField txt_CI;
     private javax.swing.JTextField txt_apellido;
-    private javax.swing.JTextField txt_credHipoteca;
-    private javax.swing.JTextField txt_creditoCasaComercial;
     private javax.swing.JTextField txt_direccion;
     private javax.swing.JTextField txt_edad;
     private javax.swing.JTextField txt_nombre;
-    private javax.swing.JTextField txt_pagoAgua;
-    private javax.swing.JTextField txt_pagoLuz;
-    private javax.swing.JTextField txt_pagoTarjetas;
-    private javax.swing.JTextField txt_pagoTelf;
     // End of variables declaration//GEN-END:variables
 }
